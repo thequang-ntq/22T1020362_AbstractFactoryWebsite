@@ -1,0 +1,45 @@
+package _22T1020362.config;
+
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+
+public class MySQLConfig {
+	// 0. Khai báo các thuộc tính, hàm như bình thường
+	//Ket noi CSDL
+	private Connection cn;
+	@Value("${spring.datasource.url}")
+	private String url;
+	@Value("${spring.datasource.username}")
+	private String user;
+	@Value("${spring.datasource.password}")
+	private String pass;
+
+	public Connection getCn() {
+		return this.cn;
+	}
+
+	// 1. Khai báo private constructor
+	private MySQLConfig() throws SQLException {
+		cn = DriverManager.getConnection(url, user, pass);
+	}
+	
+	// 2. Khai báo INSTANCE
+	private static MySQLConfig instance = null;
+	
+	// 3. Khai báo getInstance
+	public static MySQLConfig getInstance() throws SQLException {
+		if (instance == null) {
+			instance = new MySQLConfig();
+		}
+		
+		return instance;
+	}
+
+}

@@ -1,0 +1,3 @@
+MySQL
+Nganh
+jdbc:mysql://localhost:3306/mtk_abstractfactory?useUSSL=false|root|quang

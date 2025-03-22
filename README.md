@@ -62,14 +62,16 @@
 git clone https://github.com/thequang-ntq/22T1020362_AbstractFactoryWebsite.git
 ```
 
-### 2.
+### 2. Change your own datasource, data.mongodb
+### 3. Add database through database script in database/*
+### 4. Run Angular in your code editor (VS Code, ...)
 
 ## III. Run App
 
 - This app can run on Web(recommended Chrome latest version).
 - **To run this app on Web, just open your project terminal in your code editor and type:**
 ```bash
-
+ng serve
 ```
 
 ## Error
@@ -83,7 +85,8 @@ git clone https://github.com/thequang-ntq/22T1020362_AbstractFactoryWebsite.git
 
 | Date         | Task                | Notes                                               |
 |--------------|---------------------|-----------------------------------------------------|
-| 21/03/2025     | Project setup       |                                                     |
+| 21/03/2025   |   Project setup     |                                                     |
+| 22/03/2025   | Add backend         | Spring Boot, sinhvien, nganh, abstract factory      |
 
 ##### Future Work
 - [ ] Update app structure, optimize and clean code.

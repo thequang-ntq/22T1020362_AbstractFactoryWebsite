@@ -1,0 +1,3 @@
+spring.application.name=springboot_backend
+# Configuration - Same function as config.txt
+spring.config.location=config.txt

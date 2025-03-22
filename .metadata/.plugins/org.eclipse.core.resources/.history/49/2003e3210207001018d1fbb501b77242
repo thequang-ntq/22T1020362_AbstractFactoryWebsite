@@ -1,0 +1,27 @@
+package _22T1020362.abstractfactory;
+
+import javax.sql.DataSource;
+
+import org.springframework.stereotype.Component;
+
+import com.mongodb.client.MongoDatabase;
+
+import _22T1020362.config.MongoDBConfig;
+import _22T1020362.repo.nganhrepo.INganhRepo;
+import _22T1020362.repo.nganhrepo.MongoDBNganhRepo;
+import _22T1020362.repo.sinhvienrepo.ISinhVienRepo;
+import _22T1020362.repo.sinhvienrepo.MongoDBSinhVienRepo;
+
+@Component
+public class MongoDBRepoFactory extends RepoFactory{
+	private MongoDBConfig mg;
+	@Override
+	public ISinhVienRepo getSinhVienRepo() {
+		return new MongoDBSinhVienRepo(mg.mongoDatabase(mg.mongoClient()));
+	}
+	
+	@Override
+	public INganhRepo getNganhRepo() {
+		return new MongoDBNganhRepo(db);
+	}
+}

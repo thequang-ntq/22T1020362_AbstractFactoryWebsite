@@ -1,0 +1,33 @@
+package _22T1020362.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
+
+@Configuration(proxyBeanMethods = false)
+public class MongoDBConfig {
+	private MongoDatabase db;
+	@Value("${spring.data.mongodb.uri}")
+	private String url;
+	@Value("${spring.data.mongodb.database}")
+	private String database;
+
+	public MongoDatabase getDB() {
+		return this.db;
+	}
+	
+	@Bean
+    public MongoClient mongoClient() {
+        return MongoClients.create(this.url);
+    }
+
+    @Bean
+    public MongoDatabase mongoDatabase(MongoClient mongoClient) {
+        return mongoClient.getDatabase(database);
+    }
+	
+}

@@ -1,0 +1,15 @@
+package _22T1020362.service;
+
+import org.springframework.stereotype.Service;
+
+import _22T1020362.abstractfactory.MySQLRepoFactory;
+import _22T1020362.abstractfactory.RepoFactory;
+
+@Service
+public class MySQLService {
+	private RepoFactory factory;
+	
+	public MySQLService(){
+		this.factory = 	new MySQLRepoFactory();
+	}
+}
