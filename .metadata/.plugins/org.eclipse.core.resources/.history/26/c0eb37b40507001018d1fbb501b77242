@@ -1,0 +1,25 @@
+package _22T1020362.abstractfactory;
+
+import javax.sql.DataSource;
+
+import com.mongodb.client.MongoDatabase;
+
+import _22T1020362.config.MongoDBConfig;
+import _22T1020362.repo.nganhrepo.INganhRepo;
+import _22T1020362.repo.nganhrepo.MongoDBNganhRepo;
+import _22T1020362.repo.sinhvienrepo.ISinhVienRepo;
+import _22T1020362.repo.sinhvienrepo.MongoDBSinhVienRepo;
+
+public class MongoDBRepoFactory extends RepoFactory{
+	private MongoDatabase db;
+	
+	@Override
+	public ISinhVienRepo getSinhVienRepo() {
+		return new MongoDBSinhVienRepo(db);
+	}
+	
+	@Override
+	public INganhRepo getNganhRepo() {
+		return new MongoDBNganhRepo(db);
+	}
+}

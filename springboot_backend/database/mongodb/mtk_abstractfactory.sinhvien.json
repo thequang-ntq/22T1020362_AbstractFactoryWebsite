@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "67dd1e347ccdf56527c5d751"
+  },
+  "MaSinhVien": "T1020111",
+  "HoTen": "Lê Thị Hồng Hoa",
+  "MaNganh": 104
+},
+{
+  "_id": {
+    "$oid": "67dd1e347ccdf56527c5d752"
+  },
+  "MaSinhVien": "T1020122",
+  "HoTen": "Trần Văn Quyến",
+  "MaNganh": 102
+},
+{
+  "_id": {
+    "$oid": "67dd1e347ccdf56527c5d753"
+  },
+  "MaSinhVien": "T1020133",
+  "HoTen": "Nguyễn Văn Tiến",
+  "MaNganh": 105
+},
+{
+  "_id": {
+    "$oid": "67dd1e347ccdf56527c5d754"
+  },
+  "MaSinhVien": "T1020234",
+  "HoTen": "Trần Nguyên Chính",
+  "MaNganh": 109
+},
+{
+  "_id": {
+    "$oid": "67dd1e347ccdf56527c5d755"
+  },
+  "MaSinhVien": "T1020912",
+  "HoTen": "Lê Thị Linh",
+  "MaNganh": 836
+}]

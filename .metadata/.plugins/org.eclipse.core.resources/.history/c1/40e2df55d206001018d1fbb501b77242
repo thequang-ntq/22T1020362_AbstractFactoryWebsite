@@ -1,0 +1,3 @@
+spring.application.name=springboot_backend
+# Take data from txt file
+# Configuration

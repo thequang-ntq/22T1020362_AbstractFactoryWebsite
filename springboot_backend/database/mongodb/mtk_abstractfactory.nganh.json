@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "67dd1da97ccdf56527c5d748"
+  },
+  "MaNganh": 101,
+  "TenNganh": "Điện tử viễn thông"
+},
+{
+  "_id": {
+    "$oid": "67dd1da97ccdf56527c5d749"
+  },
+  "MaNganh": 102,
+  "TenNganh": "Công nghệ thông tin"
+},
+{
+  "_id": {
+    "$oid": "67dd1da97ccdf56527c5d74a"
+  },
+  "MaNganh": 103,
+  "TenNganh": "Toán ứng dụng"
+},
+{
+  "_id": {
+    "$oid": "67dd1da97ccdf56527c5d74b"
+  },
+  "MaNganh": 104,
+  "TenNganh": "Văn học"
+},
+{
+  "_id": {
+    "$oid": "67dd1da97ccdf56527c5d74c"
+  },
+  "MaNganh": 105,
+  "TenNganh": "Báo chí & Truyền thông"
+},
+{
+  "_id": {
+    "$oid": "67dd1da97ccdf56527c5d74d"
+  },
+  "MaNganh": 109,
+  "TenNganh": "Lịch sử"
+},
+{
+  "_id": {
+    "$oid": "67dd1da97ccdf56527c5d74e"
+  },
+  "MaNganh": 836,
+  "TenNganh": "Quản lý nhà nước"
+}]
