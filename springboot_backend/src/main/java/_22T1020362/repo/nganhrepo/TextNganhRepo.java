@@ -15,6 +15,8 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import _22T1020362.config.TextConfig;
+import _22T1020362.exception.NganhException;
+//import _22T1020362.exception.SinhVienException;
 import _22T1020362.models.Nganh;
 //import _22T1020362.models.SinhVien;
 import lombok.*;
@@ -29,7 +31,7 @@ public class TextNganhRepo implements INganhRepo{
     public List<Nganh> readNDT() {
         List<Nganh> list = new ArrayList<>();
 		try {
-			FileReader fr = new FileReader(textConfig.txtPath());
+			FileReader fr = new FileReader(textConfig.txtPathNDT());
 			BufferedReader br = new BufferedReader(fr);
 	        String line;
 	        while((line = br.readLine()) != null) {
@@ -40,8 +42,7 @@ public class TextNganhRepo implements INganhRepo{
 	        }
 	        br.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new NganhException("Lỗi khi đọc dữ liệu ngành từ file: " + e.getMessage(), e);
 		}
         return list;
     }
@@ -52,22 +53,21 @@ public class TextNganhRepo implements INganhRepo{
 		boolean check = false;
 		for(Nganh n: lst) {
 			if(n.getMaNganh() == ndt.getMaNganh()) {
-				System.out.println("Mã ngành đã tồn tại trong hệ thống, quý khách xin vui lòng kiểm tra lại.");
 				check = true;
+				throw new NganhException("Mã ngành đã tồn tại trong hệ thống: " + ndt.getMaNganh());
 			}
 		}
 		if(!check) {
 			try {
 				FileWriter fw;
-				fw = new FileWriter(textConfig.txtPath(), true);
+				fw = new FileWriter(textConfig.txtPathNDT(), true);
 				BufferedWriter bw = new BufferedWriter(fw);
 		        bw.write(ndt.toString());
 		        bw.newLine();
 		        bw.close();
-		        System.out.println("Thêm mới ngành đào tạo có mã: " + ndt.getMaNganh() + " thành công");
+//		        System.out.println("Thêm mới ngành đào tạo có mã: " + ndt.getMaNganh() + " thành công");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				throw new NganhException("Lỗi khi thêm dữ liệu ngành vào file: " + e.getMessage(), e);
 			}
 		}
     }

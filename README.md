@@ -3,7 +3,7 @@
 <div style="display: flex;">
   <div style="flex: 1;">
     <a href="https://www.facebook.com/quang.nguyenthe.710">
-      <img src="assets/images/myface.png" width="25%" height="25%">
+      My Facebook Link
     </a>
   </div>
   
@@ -62,22 +62,30 @@
 git clone https://github.com/thequang-ntq/22T1020362_AbstractFactoryWebsite.git
 ```
 
-### 2. Change your own datasource, data.mongodb
-### 3. Add database through database script in database/*
-### 4. Run Angular in your code editor (VS Code, ...)
+### 2. In springboot-backend
+#### In src/main/resources, application.properties: change .username, .password, .database to your own
+#### Add database in MySQL, MongoDB through data base script in database/*
+#### Run spring boot, it's port is: http://localhost/8080
+#### This is the data backend
+
+### 3. In angular-frontend
+#### Open terminal in code editor, run: ng serve, it's port is: http://localhost/4200
+#### This is the App UI
 
 ## III. Run App
 
 - This app can run on Web(recommended Chrome latest version).
-- **To run this app on Web, just open your project terminal in your code editor and type:**
+- This app can run on local.
+- **To run this app, just open your project terminal in your code editor and type:**
 ```bash
 ng serve
 ```
+- On http://localhost/4200
 
 ## Error
 <details>
-   
-<summary></summary>
+  Updating...
+<summary>Updating...</summary>
 </details>
 
 
@@ -87,6 +95,7 @@ ng serve
 |--------------|---------------------|-----------------------------------------------------|
 | 21/03/2025   |   Project setup     |                                                     |
 | 22/03/2025   | Add backend         | Spring Boot, sinhvien, nganh, abstract factory      |
+| 23/03/2025   | Fix backend, Add frontend| Spring Boot backend, Angular frontend          |
 
 ##### Future Work
 - [ ] Update app structure, optimize and clean code.

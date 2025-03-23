@@ -12,6 +12,7 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 
 import _22T1020362.config.MongoDBConfig;
+import _22T1020362.exception.SinhVienException;
 import _22T1020362.models.SinhVien;
 import lombok.*;
 
@@ -38,7 +39,7 @@ public class MongoDBSinhVienRepo implements ISinhVienRepo{
                 lst.add(sv);
             }
         } catch (Exception e) {
-            System.err.println("Lỗi kết nối MongoDB: " + e.getMessage());
+        	throw new SinhVienException("Lỗi khi đọc dữ liệu sinh viên từ CSDL MongoDB: " + e.getMessage(), e);
         }
 		return lst;
 
@@ -54,14 +55,14 @@ public class MongoDBSinhVienRepo implements ISinhVienRepo{
             Document found = collection.find(Filters.eq("MaSinhVien", msv)).first();
             if(found != null) {
             	collection.deleteOne(Filters.eq("MaSinhVien", msv));
-                System.out.println("Đã xóa sinh viên có MaSinhVien: " + msv);
+//                System.out.println("Đã xóa sinh viên có MaSinhVien: " + msv);
             }
             else {
-            	System.out.println("Không tìm thấy sinh viên có MaSinhVien: " + msv);
+            	throw new SinhVienException("Mã sinh viên không tồn tại trong hệ thống");
             }
             
         } catch (Exception e) {
-            System.err.println("Lỗi khi xóa dữ liệu: " + e.getMessage());
+        	throw new SinhVienException("Lỗi khi xóa dữ liệu sinh viên khỏi CSDL MongoDB: " + e.getMessage(), e);
         }
 		
 	}

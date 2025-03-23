@@ -14,6 +14,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import _22T1020362.config.TextConfig;
+import _22T1020362.exception.SinhVienException;
 //import _22T1020362.models.Nganh;
 import _22T1020362.models.SinhVien;
 import lombok.*;
@@ -28,7 +29,7 @@ public class TextSinhVienRepo implements ISinhVienRepo{
     public List<SinhVien> readSV() {
         List<SinhVien> list = new ArrayList<>();
         try {
-			FileReader fr = new FileReader(textConfig.txtPath());
+			FileReader fr = new FileReader(textConfig.txtPathSV());
 			BufferedReader br = new BufferedReader(fr);
 	        String line;
 	        while((line = br.readLine()) != null) {
@@ -39,8 +40,7 @@ public class TextSinhVienRepo implements ISinhVienRepo{
 	        }
 	        br.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new SinhVienException("Lỗi khi đọc dữ liệu sinh viên từ file: " + e.getMessage(), e);
 		}
         return list;
     }
@@ -52,7 +52,7 @@ public class TextSinhVienRepo implements ISinhVienRepo{
 		if(removed) {
 			FileWriter fw;
 			try {
-				fw = new FileWriter(textConfig.txtPath(), false);
+				fw = new FileWriter(textConfig.txtPathSV(), false);
 				BufferedWriter bw = new BufferedWriter(fw);
 				for(SinhVien sv: lst) {
 					bw.write(sv.toString());
@@ -60,14 +60,13 @@ public class TextSinhVienRepo implements ISinhVienRepo{
 				}
 				bw.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				throw new SinhVienException("Lỗi khi xóa dữ liệu sinh viên khỏi file: " + e.getMessage(), e);
 			}
 	        
-			System.out.println("Hệ thống đã xóa sinh viên có mã: " + msv);
+//			System.out.println("Hệ thống đã xóa sinh viên có mã: " + msv);
 		}
 		else {
-			System.out.println("Hệ thống không tìm thấy sinh viên có mã: " + msv);
-		}
+			throw new SinhVienException("Hệ thống không tìm thấy sinh viên có mã: " + msv);
+        }
     }
 }

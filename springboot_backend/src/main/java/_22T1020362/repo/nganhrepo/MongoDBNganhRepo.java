@@ -12,6 +12,8 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 
 import _22T1020362.config.MongoDBConfig;
+import _22T1020362.exception.NganhException;
+//import _22T1020362.exception.SinhVienException;
 import _22T1020362.models.Nganh;
 import lombok.*;
 
@@ -37,7 +39,7 @@ public class MongoDBNganhRepo implements INganhRepo{
                 lst.add(ndt);
             }
         } catch (Exception e) {
-            System.err.println("Lỗi kết nối MongoDB: " + e.getMessage());
+        	throw new NganhException("Lỗi khi đọc dữ liệu ngành từ CSDL MongoDB: " + e.getMessage(), e);
         }
 		return lst;
 
@@ -52,17 +54,17 @@ public class MongoDBNganhRepo implements INganhRepo{
 
             Document found = collection.find(Filters.eq("MaNganh", ndt.getMaNganh())).first();
             if(found != null) {
-                System.out.println("Ngành có MaNganh: " + ndt.getMaNganh() + " đã tồn tại trong hệ thống");
+            	throw new NganhException("Mã ngành đã tồn tại trong hệ thống");
             }
             else {
             	Document newNDT = new Document("MaNganh", ndt.getMaNganh()).append("TenNganh", ndt.getTenNganh());
                 collection.insertOne(newNDT);
 
-                System.out.println("Đã chèn thành công ngành: " + newNDT.toJson());
+//                System.out.println("Đã chèn thành công ngành: " + newNDT.toJson());
             }
             
         } catch (Exception e) {
-            System.err.println("Lỗi khi chèn dữ liệu: " + e.getMessage());
+        	throw new NganhException("Lỗi khi thêm dữ liệu ngành vào CSDL MongoDB: " + e.getMessage(), e);
         }
 		
 	}

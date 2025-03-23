@@ -1,0 +1,45 @@
+package _22T1020362.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import _22T1020362.models.Nganh;
+import _22T1020362.models.SinhVien;
+import _22T1020362.service.MySQLService;
+import lombok.AllArgsConstructor;
+
+import java.util.List;
+
+@AllArgsConstructor
+@RestController
+@RequestMapping("/api/mysql")
+@CrossOrigin(origins = "http://localhost:4200") //angular port
+public class MySQLController {
+    private final MySQLService mySQLService;
+
+    @GetMapping("/sinhvien")
+    public ResponseEntity<List<SinhVien>> readSV() {
+        List<SinhVien> sv = mySQLService.readSV();
+        return new ResponseEntity<>(sv, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/sinhvien/delete/{msv}")
+    public ResponseEntity<?> deleteSV(@PathVariable("msv") String msv) {
+        mySQLService.deleteSV(msv);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/nganh")
+    public ResponseEntity<List<Nganh>> readNDT() {
+        List<Nganh> ndt = mySQLService.readNDT();
+        return new ResponseEntity<>(ndt, HttpStatus.OK);
+    }
+
+    @PostMapping("/nganh/add")
+    public ResponseEntity<Nganh> insertNDT(@RequestBody Nganh nganh) {
+    	mySQLService.insertNDT(nganh);
+    	return new ResponseEntity<>(nganh, HttpStatus.CREATED);
+    }
+}
+

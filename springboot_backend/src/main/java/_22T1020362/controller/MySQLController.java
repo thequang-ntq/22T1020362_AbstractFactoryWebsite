@@ -1,5 +1,7 @@
 package _22T1020362.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import _22T1020362.models.Nganh;
@@ -17,23 +19,43 @@ public class MySQLController {
     private final MySQLService mySQLService;
 
     @GetMapping("/sinhvien")
-    public List<SinhVien> readSV() {
-        return mySQLService.readSV();
+    public ResponseEntity<List<SinhVien>> readSV() {
+    	try {
+            List<SinhVien> sv = mySQLService.readSV();
+            return new ResponseEntity<>(sv, HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
     }
 
-    @DeleteMapping("/sinhvien/{msv}")
-    public void deleteSV(@PathVariable String msv) {
-        mySQLService.deleteSV(msv);
+    @DeleteMapping("/sinhvien/delete/{msv}")
+    public ResponseEntity<?> deleteSV(@PathVariable("msv") String msv) {
+    	try {
+            mySQLService.deleteSV(msv);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
     @GetMapping("/nganh")
-    public List<Nganh> readNDT() {
-        return mySQLService.readNDT();
+    public ResponseEntity<List<Nganh>> readNDT() {
+    	try{
+            List<Nganh> ndt = mySQLService.readNDT();
+            return new ResponseEntity<>(ndt, HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
     }
 
-    @PostMapping("/nganh")
-    public void insertNDT(@RequestBody Nganh nganh) {
-    	mySQLService.insertNDT(nganh);
+    @PostMapping("/nganh/add")
+    public ResponseEntity<Nganh> insertNDT(@RequestBody Nganh nganh) {
+    	try {
+            mySQLService.insertNDT(nganh);
+            return new ResponseEntity<>(nganh, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
     }
 }
 

@@ -4,6 +4,8 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="false"/>
 		<list key="findhistory">
+			<item value="spring-boot-starter-j"/>
+			<item value="MySQL"/>
 			<item value="jpa"/>
 		</list>
 	</section>

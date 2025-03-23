@@ -9,6 +9,8 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import _22T1020362.config.MySQLConfig;
+import _22T1020362.exception.NganhException;
+//import _22T1020362.exception.SinhVienException;
 import _22T1020362.models.Nganh;
 import lombok.*;
 
@@ -34,7 +36,7 @@ public class MySQLNganhRepo implements INganhRepo{
 			rs.close(); pr.close();
 		}
 		catch(Exception e) {
-			e.printStackTrace();
+			throw new NganhException("Lỗi khi đọc dữ liệu ngành từ CSDL MySQL: " + e.getMessage(), e);
 		}
 	
 		return lst;
@@ -51,7 +53,7 @@ public class MySQLNganhRepo implements INganhRepo{
 			PreparedStatement pr = cn.prepareStatement(sql1);
 			ResultSet rs = pr.executeQuery();
 			if(rs.isBeforeFirst()) {
-				System.out.println("Mã ngành đã tồn tại trong hệ thống, quý khách xin vui lòng kiểm tra lại.");
+				throw new NganhException("Mã ngành đã tồn tại trong hệ thống");
 			}
 			else {
 				pr = cn.prepareStatement(sql2);
@@ -59,17 +61,17 @@ public class MySQLNganhRepo implements INganhRepo{
 	            pr.setString(2, ndt.getTenNganh());
 	            int rowInserted = pr.executeUpdate();
 	            if(rowInserted > 0) {
-	            	System.out.println("Thêm mới ngành đào tạo có mã: " + ndt.getMaNganh() + " thành công");
+//	            	System.out.println("Thêm mới ngành đào tạo có mã: " + ndt.getMaNganh() + " thành công");
 	            }
 	            else {
-	            	System.out.println("Lỗi không xác định, hệ thống đang kiểm tra lại, xin quý khách vui lòng đợi trong giây lát");
+	            	throw new NganhException("Lỗi không xác định khi thêm dữ liệu ngành vào CSDL MySQL");
 	            }
 			}
 			rs.close();
 			pr.close();
 		}
 		catch(Exception e) {
-			e.printStackTrace();
+			throw new NganhException("Lỗi khi thêm dữ liệu ngành vào CSDL MySQL: " + e.getMessage(), e);
 		}
 
 	}

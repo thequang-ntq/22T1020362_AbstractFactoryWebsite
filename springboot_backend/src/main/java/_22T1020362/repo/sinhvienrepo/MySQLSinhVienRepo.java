@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import _22T1020362.config.MySQLConfig;
+import _22T1020362.exception.SinhVienException;
 import _22T1020362.models.SinhVien;
 import lombok.*;
 
@@ -33,7 +34,7 @@ public class MySQLSinhVienRepo implements ISinhVienRepo{
 			rs.close(); pr.close();
 		}
 		catch(Exception e) {
-			e.printStackTrace();
+			throw new SinhVienException("Lỗi khi đọc dữ liệu sinh viên từ CSDL MySQL: " + e.getMessage(), e);
 		}
 	
 		return lst;
@@ -50,24 +51,24 @@ public class MySQLSinhVienRepo implements ISinhVienRepo{
 			PreparedStatement pr = cn.prepareStatement(sql1);
 			ResultSet rs = pr.executeQuery();
 			if(!rs.isBeforeFirst()) {
-				System.out.println("Mã sinh viên không tồn tại trong hệ thống, quý khách xin vui lòng kiểm tra lại.");
+				throw new SinhVienException("Mã sinh viên không tồn tại trong hệ thống");
 			}
 			else {
 				pr = cn.prepareStatement(sql2);
 				pr.setString(1, msv);
 	            int rowInserted = pr.executeUpdate();
 	            if(rowInserted > 0) {
-	            	System.out.println("Xóa thành công sinh viên có mã: " + msv);
+	            	//
 	            }
 	            else {
-	            	System.out.println("Lỗi không xác định, hệ thống đang kiểm tra lại, xin quý khách vui lòng đợi trong giây lát");
+	            	throw new SinhVienException("Lỗi không xác định khi xóa dữ liệu sinh viên khỏi CSDL MySQL");
 	            }
 			}
 			rs.close();
 			pr.close();
 		}
 		catch(Exception e) {
-			e.printStackTrace();
+			throw new SinhVienException("Lỗi khi xóa dữ liệu sinh viên khỏi CSDL MySQL: " + e.getMessage(), e);
 		}
 
 	}

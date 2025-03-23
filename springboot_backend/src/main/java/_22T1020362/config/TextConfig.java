@@ -7,11 +7,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration(proxyBeanMethods = false)
 public class TextConfig {
 	
-	@Value("${app.datasource.textfile.path}")
-	private String txtFileUrl;
+	@Value("${app.datasource.textfile.pathSV}")
+	private String urlSV;
+	@Value("${app.datasource.textfile.pathNDT}")
+	private String urlNDT;
 
 	@Bean
-    public String txtPath() {
-        return txtFileUrl;
+    public String txtPathSV() {
+        return urlSV;
+    }
+	
+	@Bean
+    public String txtPathNDT() {
+        return urlNDT;
     }
 }
