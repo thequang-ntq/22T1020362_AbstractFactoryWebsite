@@ -37,11 +37,11 @@
 
 | Login                          |        ............         | Student                          |
 |------------------------------------------|-----------------------------------|------------------------------------------|
-| ![Login UI] | ......................... | ![Student UI] | 
+| ![Login UI](angular_frontend/screenshots/logui.png) | ......................... | ![Student UI](angular_frontend/screenshots/sinhvienui.png) | 
 
 | Major                       |
 |-----------------------------------------------|
-| ![Major UI] |
+| ![Major UI](angular_frontend/screenshots/nganhui.png) |
 
 
 # HOW TO RUN THIS APP 
@@ -95,7 +95,8 @@ ng serve
 |--------------|---------------------|-----------------------------------------------------|
 | 21/03/2025   |   Project setup     |                                                     |
 | 22/03/2025   | Add backend         | Spring Boot, sinhvien, nganh, abstract factory      |
-| 23/03/2025   | Fix backend, Add frontend| Spring Boot backend, Angular frontend          |
+| 23/03/2025   | Fix backend, Design UI, Add login UI| Spring Boot backend, Angular frontend          |
+
 
 ##### Future Work
 - [ ] Update app structure, optimize and clean code.

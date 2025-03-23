@@ -1,0 +1,15 @@
+.database-buttons {
+    display: flex;
+    flex-direction: column;
+}
+  
+.button {
+    display: flex;  
+    align-items: center;
+    margin-bottom: 5vmin;
+}
+  
+.button img {
+    max-height: 15vmin;
+    margin-right: 5vmin;
+}
