@@ -1,15 +1,89 @@
-.database-buttons {
+body {
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    color: white;
     display: flex;
-    flex-direction: column;
-}
-  
-.button {
-    display: flex;  
+    justify-content: center;
     align-items: center;
-    margin-bottom: 5vmin;
+    height: 100vh;
 }
-  
-.button img {
-    max-height: 15vmin;
-    margin-right: 5vmin;
+.container {
+    background: black;
+    padding-left: 2vmin;
+    padding-right: 2vmin;
+    padding-top: 0.5vmin;
+    padding-bottom: 0.5vmin;
+    border-radius: 4vmin;
+    width: 40vmin;
+    top: 5%;
+    left: 2%;
+    background: black;
+    /* margin: 0; */
+    /* height: 20vmin; */
+}
+.option {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 2.5vmin;
+    padding-right: 2.5vmin;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    border-bottom: 0.5vmin solid #333;
+}
+.option:last-child {
+    border-bottom: none;
+}
+.option img {
+    vertical-align: middle;
+    margin-right: 1vmin;
+    width: 5vmin;
+    height: 5vmin;
+    /* border-radius: 50%; */
+    margin-right: 2vmin;
+}
+.option label {
+    flex-grow: 1;   
+    cursor: pointer;
+    font-size: 3vmin;
+}
+.option input {
+    appearance: none;
+    width: 3vmin;
+    height: 3vmin;
+    border-radius: 0.5vmin;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.option input:checked {
+    background: purple;
+}
+input[type="radio"] {
+    width: 5vmin;
+    height: 5vmin;
+    appearance: none; /* Ẩn checkbox mặc định */
+    border-radius: 1vmin;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"]::before {
+    content: "✔";
+    font-size: 2.5vmin;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Ban đầu ẩn */
+    transition: transform 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked {
+    background-color: #6a5acd; /* Màu nền khi được chọn */
+}
+
+input[type="radio"]:checked::before {
+    transform: translate(-50%, -50%) scale(1); /* Hiện dấu check */
 }

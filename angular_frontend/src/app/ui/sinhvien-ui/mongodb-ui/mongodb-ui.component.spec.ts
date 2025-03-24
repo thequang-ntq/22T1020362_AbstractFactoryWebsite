@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NganhUIComponent } from './nganh-ui.component';
+import { MongoDBSVUIComponent } from './mongodb-ui.component';
 
-describe('NganhUIComponent', () => {
-  let component: NganhUIComponent;
-  let fixture: ComponentFixture<NganhUIComponent>;
+describe('MongoDBSVUIComponent', () => {
+  let component: MongoDBSVUIComponent;
+  let fixture: ComponentFixture<MongoDBSVUIComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NganhUIComponent]
+      imports: [MongoDBSVUIComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NganhUIComponent);
+    fixture = TestBed.createComponent(MongoDBSVUIComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

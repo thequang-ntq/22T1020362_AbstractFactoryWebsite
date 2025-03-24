@@ -1,1 +1,14 @@
-<p>table-ndt works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Mã ngành</th>
+            <th>Tên ngành</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let nganh of ndt">
+            <td>{{nganh.maNganh}}</td>
+            <td>{{nganh.tenNganh}}</td>
+        </tr>
+    </tbody>
+</table>

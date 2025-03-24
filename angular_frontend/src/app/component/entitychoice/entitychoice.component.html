@@ -1,12 +1,12 @@
-<div class="entity-buttons">
-    <div class="button">
-      <img src="../../../assets/images/sinhvien.png" alt="Sinh viên Icon">
-      <span>Sinh viên</span>
-      <input type="checkbox">
-    </div>
-    <div class="button">
-      <img src="../../../assets/images/nganh.png" alt="Ngành Icon">
-      <span>Ngành</span>
-      <input type="checkbox">
-    </div>
+<div class="container">
+  <div class="option">
+    <img src="../../../assets/images/sinhvien.png" alt="Sinh viên">
+    <label for="sinhvien">Sinh viên</label>
+    <input type="radio" id="sinhvien" name="et" value="sinhvien" [(ngModel)]="selectedOption" (change)="onOptionChange('sinhvien')">
   </div>
+  <div class="option">
+    <img src="../../../assets/images/nganh.png" alt="Ngành">
+    <label for="nganh">Ngành</label>
+    <input type="radio" id="nganh" name="et" value="nganh" [(ngModel)]="selectedOption" (change)="onOptionChange('nganh')">
+  </div>
+</div>

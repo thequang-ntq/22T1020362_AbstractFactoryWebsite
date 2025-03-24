@@ -1,4 +1,26 @@
-<div class="database-buttons">
+<div class="container">
+  <div class="option">
+      <img src="../../../assets/images/mysql.png" alt="MySQL">
+      <label for="mysql">MySQL</label>
+      <input type="radio" id="mysql" name="db" value="mysql" [(ngModel)]="selectedDB" (change)="onDBChange('mysql')">
+  </div>
+  <div class="option">
+      <img src="../../../assets/images/mongodb.png" alt="MongoDB">
+      <label for="mongodb">MongoDB</label>
+      <input type="radio" id="mongodb" name="db" value="mongodb" [(ngModel)]="selectedDB" (change)="onDBChange('mongodb')">
+  </div>
+  <div class="option">
+      <img src="../../../assets/images/text.png" alt="Text">
+      <label for="text">Text</label>
+      <input type="radio" id="text" name="db" value="text" [(ngModel)]="selectedDB" (change)="onDBChange('text')">
+  </div>
+</div>
+
+
+
+
+
+<!-- <div class="database-buttons">
     <div class="button">
       <img src="../../../assets/images/mysql.png" alt="MySQL Icon">
       <span>MySQL</span>
@@ -14,4 +36,4 @@
       <span>Text</span>
       <input type="checkbox">
     </div>
-  </div>
+  </div> -->

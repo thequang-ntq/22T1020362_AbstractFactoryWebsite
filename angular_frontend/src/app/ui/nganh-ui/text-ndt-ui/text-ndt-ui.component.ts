@@ -1,21 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { Nganh } from '../../entity/nganh/nganh';
-import { TextNDTService } from '../../service/nganh/textNDT.service';
-import { MongoDBNDTService } from '../../service/nganh/mongodbNDT.service';
-import { MySQLNDTService } from '../../service/nganh/mysqlNDT.service';
+import { Nganh } from '../../../entity/nganh/nganh';
+import { TextNDTService } from '../../../service/nganh/textNDT.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { DbchoiceComponent } from '../../../component/dbchoice/dbchoice.component';
+import { EntitychoiceComponent } from '../../../component/entitychoice/entitychoice.component';
+import { TableNDTComponent } from '../../../component/table-ndt/table-ndt.component';
+import { LogoutComponent } from '../../../component/logout/logout.component';
+import { ButtonAddComponent } from '../../../component/button-add/button-add.component';
 
 @Component({
-  selector: 'app-nganh-ui',
-  imports: [],
-  templateUrl: './nganh-ui.component.html',
-  styleUrl: './nganh-ui.component.css'
+  selector: 'app-text-ndt-ui',
+  imports: [DbchoiceComponent, EntitychoiceComponent, TableNDTComponent, LogoutComponent, ButtonAddComponent],
+  templateUrl: './text-ndt-ui.component.html',
+  styleUrl: './text-ndt-ui.component.css'
 })
-export class NganhUIComponent implements OnInit {
-  public ndt!: Nganh[];
+export class TextNDTUIComponent implements OnInit {
+  public ndt: Nganh[] = [];
+  public selectedOption: string = 'nganh';
+  public selectedDB: string = 'text';
 
-  constructor(private textNDTService: TextNDTService, private mongoDBNDTService: MongoDBNDTService, private mySQLNDTService: MySQLNDTService) {}
+  selectedDBEvent(db: string) {
+    this.selectedDB = db;
+  }
+
+  constructor(private textNDTService: TextNDTService) {}
 
   ngOnInit() {
     this.onReadNDT();
@@ -35,17 +44,7 @@ export class NganhUIComponent implements OnInit {
 
   public onInsertNDT(insertForm: NgForm, type: string): void {
     document.getElementById('add-employee-form')!.click();
-    var service;
-    if(type === 'MySQL'){
-      service = this.mySQLNDTService;
-    }
-    else if(type === 'MongoDB'){
-      service = this.mongoDBNDTService;
-    }
-    else{
-      service = this.textNDTService;
-    }
-    service.insertNDT(insertForm.value).subscribe({
+    this.textNDTService.insertNDT(insertForm.value).subscribe({
       next: (response: Nganh) => {
         console.log(response);
         this.onReadNDT();

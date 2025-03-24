@@ -67,10 +67,12 @@ git clone https://github.com/thequang-ntq/22T1020362_AbstractFactoryWebsite.git
 #### Add database in MySQL, MongoDB through data base script in database/*
 #### Run spring boot, it's port is: http://localhost/8080
 #### This is the data backend
+#### You must run this spring boot before running the angular-frontend app
 
 ### 3. In angular-frontend
 #### Open terminal in code editor, run: ng serve, it's port is: http://localhost/4200
 #### This is the App UI
+#### Using the app
 
 ## III. Run App
 
@@ -95,7 +97,8 @@ ng serve
 |--------------|---------------------|-----------------------------------------------------|
 | 21/03/2025   |   Project setup     |                                                     |
 | 22/03/2025   | Add backend         | Spring Boot, sinhvien, nganh, abstract factory      |
-| 23/03/2025   | Fix backend, Design UI, Add login UI| Spring Boot backend, Angular frontend          |
+| 23/03/2025   | Fix backend, Design UI, Add login UI| Spring Boot backend, Angular frontend |
+| 24/03/2025   | Add more UI         | Read UI For sinhvien, nganh                         |
 
 
 ##### Future Work

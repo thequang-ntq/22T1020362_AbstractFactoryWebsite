@@ -1,13 +1,6 @@
-.login-box {
-    text-align: center;
-    background-color: white;
-    padding: 5vmin;
-    border-radius: 5vmin;
-    box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    width: auto;
-    margin-top: 15vmin;
-}
+/* .login-box {
+  text-align: center;
+} */
 
 .login-box h2 {
   margin-bottom: 5vmin;
@@ -31,11 +24,16 @@ input[type="password"] {
   border-radius: 2vmin;
 }
 
-button[type="submit"] {
-  background-color: #333;
-  color: white;
-  padding: 2vmin 15vmin;
-  border: none;
-  border-radius: 2vmin;
-  cursor: pointer;
+.button {
+    background-color: #333;
+    color: white;
+    font-size: 2.4vmin;
+    padding: 2vmin 15vmin;
+    border: none;
+    border-radius: 2vmin;
+    cursor: pointer;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: #444;
 }

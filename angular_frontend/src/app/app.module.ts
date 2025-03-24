@@ -22,6 +22,6 @@ import { TextSVService } from './service/sinhvien/textSV.service';
   ],
   providers: [MongoDBNDTService, MySQLNDTService, TextNDTService, 
     MongoDBSVService, MySQLSVService, TextSVService, provideHttpClient()],
-//   bootstrap: [AppComponent]
+  // bootstrap: [AppComponent]
 })
 export class AppModule { }

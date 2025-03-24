@@ -1,0 +1,13 @@
+<div class="container">    
+    <div class="choice">
+        <app-dbchoice [selectedDB]="selectedDB" [selectedOption]="selectedOption" class="choice-left"></app-dbchoice>
+        <app-entitychoice [selectedDB]="selectedDB" [selectedOption]="selectedOption" class="choice-right"></app-entitychoice>
+    </div>
+    <div class="tableNDT">
+        <app-table-ndt [ndt]="ndt" class="tbl"></app-table-ndt>
+        <app-button-add class="bt"></app-button-add>
+    </div>
+    <div class="lgout">
+        <app-logout></app-logout>
+    </div>
+</div>

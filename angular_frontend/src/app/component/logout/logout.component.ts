@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-logout',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './logout.component.html',
   styleUrl: './logout.component.css'
 })

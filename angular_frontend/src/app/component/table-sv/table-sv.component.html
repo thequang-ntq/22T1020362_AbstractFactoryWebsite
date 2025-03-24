@@ -1,1 +1,18 @@
-<p>table-sv works!</p>
+<!-- <app-dbchoice (selectEvent)="selectedDBEvent($event)"></app-dbchoice> -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Mã sinh viên</th>
+            <th>Họ tên</th>
+            <th>Mã ngành</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let sinhvien of sv">
+            <td>{{sinhvien.maSinhVien}}</td>
+            <td>{{sinhvien.hoTen}}</td>
+            <td>{{sinhvien.maNganh}}</td>
+        </tr>  
+    </tbody>
+</table>

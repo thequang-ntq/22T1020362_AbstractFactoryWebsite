@@ -1,8 +1,17 @@
 .container {
     background-position: center;
     background-size: cover;
-    background-position: center;
     display: flex;
     justify-content: center;
+    position: relative;
     align-items: center;
+    text-align: center;
+    background-color: white;
+    padding: 5vmin;
+    border-radius: 5vmin;
+    box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: auto;
+    margin-top: 8%;
+    margin-left: 37%;
  }

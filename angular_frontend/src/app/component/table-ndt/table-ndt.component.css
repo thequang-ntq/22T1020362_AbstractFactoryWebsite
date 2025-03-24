@@ -1,0 +1,30 @@
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+table {
+    width: 65vmin;
+    height: 20vmin;
+    box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 3vmin;
+    overflow: hidden;
+    box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.1);
+}
+th, td {
+    border: 0.2vmin solid #ccc;
+    padding: 1.5vmin;
+    text-align: left;
+    font-size: 2.4vmin;
+}
+th {
+    background-color: #e6e6e6;
+}
+td {
+    background-color: white;
+}

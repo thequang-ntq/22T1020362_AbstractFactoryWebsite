@@ -1,11 +1,13 @@
-header {
+header{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: 0;
+    position: relative;
+    background-color: white;
 }
-  
 header h1 {
     font-size: 4vmin;
     margin: 0;

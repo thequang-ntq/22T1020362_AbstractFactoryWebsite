@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    position: relative;
+}
+.choice{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tableSV{
+    display: flex;
+    justify-content: center;   
+    padding-top: 1%;
+    padding-bottom: 1%; 
+}
+.lgout {
+    position: absolute;
+    top: 100%;
+    right: 5%;
+}
