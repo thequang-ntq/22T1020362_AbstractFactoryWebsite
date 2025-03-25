@@ -65,7 +65,13 @@ export class MySQLSVUIComponent implements OnInit {
           deleteForm.reset();
         },
         error: (error: HttpErrorResponse) => {
-          alert(error.message);
+          if (error.status === 409) {
+            alert("Mã sinh viên không tồn tại. Vui lòng nhập mã sinh viên khác.");
+          } else if (error.error && error.error.message) {
+            alert(error.error.message);
+          } else {
+            alert("Hệ thống đang gặp phải lỗi và đang trong quá trình xử lý lỗi.");
+          }
           deleteForm.reset();
         }
       });

@@ -69,7 +69,13 @@ export class TextNDTUIComponent implements OnInit {
           insertForm.reset();
         },
         error: (error: HttpErrorResponse) => {
-          alert(error.message);
+          if (error.status === 409) {
+            alert("Mã ngành đã tồn tại. Vui lòng nhập mã ngành khác.");
+          } else if (error.error && error.error.message) {
+            alert(error.error.message);
+          } else {
+            alert("Hệ thống đang gặp phải lỗi và đang trong quá trình xử lý lỗi.");
+          }
           insertForm.reset();
         }
       });
