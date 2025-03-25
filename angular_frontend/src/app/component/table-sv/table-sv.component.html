@@ -8,7 +8,7 @@
             <th>Mã ngành</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="sv.length > 0">
         <tr *ngFor = "let sinhvien of sv">
             <td>{{sinhvien.maSinhVien}}</td>
             <td>{{sinhvien.hoTen}}</td>
@@ -16,3 +16,11 @@
         </tr>  
     </tbody>
 </table>
+
+<!-- Notification for no employees -->
+<div *ngIf="sv?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">Sinh viên rỗng.</h4>
+      <p>Không có sinh viên nào được tìm thấy.</p>
+    </div>
+</div>

@@ -8,10 +8,11 @@ import { EntitychoiceComponent } from '../../../component/entitychoice/entitycho
 import { TableSVComponent } from '../../../component/table-sv/table-sv.component';
 import { LogoutComponent } from '../../../component/logout/logout.component';
 import { ButtonDeleteComponent } from '../../../component/button-delete/button-delete.component';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-mysql-ui',
-  imports: [DbchoiceComponent, EntitychoiceComponent, TableSVComponent, LogoutComponent, ButtonDeleteComponent],
+  imports: [DbchoiceComponent, EntitychoiceComponent, TableSVComponent, LogoutComponent, ButtonDeleteComponent, FormsModule],
   templateUrl: './mysql-ui.component.html',
   styleUrl: './mysql-ui.component.css'
 })
@@ -35,30 +36,50 @@ export class MySQLSVUIComponent implements OnInit {
         console.log(this.sv);
       },
       error: (error: HttpErrorResponse) => {
-        alert(error.message);
+        if (error.status === 409) {
+          alert("Mã sinh viên không tồn tại. Vui lòng nhập mã sinh viên khác.");
+        } else if (error.error && error.error.message) {
+          alert(error.error.message);
+        } else {
+          alert("Hệ thống đang gặp phải lỗi và đang trong quá trình xử lý lỗi.");
+        }
       }
     });
   }
 
-  public onDeleteSV(msv: string): void {
-    this.mySQLSVService.deleteSV(msv).subscribe({
-      next: (response: void) => {
-        this.onReadSV();
-        console.log(this.sv);
-      },
-      error: (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
+  public onDeleteSV(deleteForm: NgForm): void {
+    document.getElementById('close-employee-form')!.click();
+    document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener('hide.bs.modal', function (event) {
+          if (document.activeElement) {
+              (document.activeElement as any).blur();
+          }
+      });
     });
+    if(deleteForm.valid){
+      let msv: string = deleteForm.value.masv;
+      this.mySQLSVService.deleteSV(msv).subscribe({
+        next: (response: void) => {
+          this.onReadSV();
+          console.log(this.sv);
+          deleteForm.reset();
+        },
+        error: (error: HttpErrorResponse) => {
+          alert(error.message);
+          deleteForm.reset();
+        }
+      });
+    }
+    
   }
 
-  public onOpenModal(sv: SinhVien): void {
-    const container = document.getElementById('main-container');
+  public onOpenModal(): void {
+    const container = document.getElementById('tbl');
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
-    this.deleteSV = sv;
-    button.setAttribute('data-target', '#deleteSVModal');
+    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-target', '#addEmployeeModal');
     container!.appendChild(button);
     button.click();
   }

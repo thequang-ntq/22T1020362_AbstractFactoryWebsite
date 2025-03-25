@@ -35,21 +35,24 @@
 
 ## Screenshots
 
-| Login                          |        ............         | Student                          |
-|------------------------------------------|-----------------------------------|------------------------------------------|
-| ![Login UI](angular_frontend/screenshots/logui.png) | ......................... | ![Student UI](angular_frontend/screenshots/sinhvienui.png) | 
+| Login                                               |        ............         | Student                                  |
+|------------------------------------------           |-----------------------------|---------------------------------------   | 
+| ![Login UI](angular_frontend/screenshots/logui.png) | .............               | ![Student UI](angular_frontend/screenshots/sinhvienui.png) | 
 
-| Major                       |
-|-----------------------------------------------|
-| ![Major UI](angular_frontend/screenshots/nganhui.png) |
+| Major                                                 | .....................   | Delete Student       |                
+|-----------------------------------------------        |------------------------ | ------------------   |               
+| ![Major UI](angular_frontend/screenshots/nganhui.png) | ..............          | ![Delete Student UI](angular_frontend/screenshots/deletesvui.png) |
 
+| Add Major UI                                                |
+| --------------------------------------                      |
+| ![Add Major UI](angular_frontend/screenshots/themndtui.png) |
 
 # HOW TO RUN THIS APP 
 
 ## I. Prerequisites
 
 - **SYSTEM:** 2GB RAM, At Least 12GB of Free Space in C Drive, And 1GB of Free Space in your App Folder.
-- **INSTALLED:** [Java], [Git](https://git-scm.com/downloads)(v2.48.1), [SpringToolSuite], [MySQL], [MongoDB], [VSCode](https://code.visualstudio.com/), [Angular]
+- **INSTALLED:** [Java], [Git](https://git-scm.com/downloads)(v2.48.1), [SpringToolSuite], [MySQL], [MongoDB], [VSCode](https://code.visualstudio.com/), [Angular] - version 19
 - **You must have Wifi / Internet Access to run this app**
 
 ## II. Setup
@@ -68,6 +71,7 @@ git clone https://github.com/thequang-ntq/22T1020362_AbstractFactoryWebsite.git
 #### Run spring boot, it's port is: http://localhost/8080
 #### This is the data backend
 #### You must run this spring boot before running the angular-frontend app
+#### After a short period of time running springboot-backend, MySQL may be error (500 Internal Server Error)
 
 ### 3. In angular-frontend
 #### Open terminal in code editor, run: ng serve, it's port is: http://localhost/4200
@@ -86,8 +90,8 @@ ng serve
 
 ## Error
 <details>
-  Updating...
-<summary>Updating...</summary>
+  500 Internal Server Error
+<summary>This error caused by two reasons: First, the local DB server has error (MySQL is the most) after running a period of time. Second, users may input the "manganh" of "nganh" that already has in server, or delete "masv" of "sinhvien" that not has in server.</summary>
 </details>
 
 
@@ -99,6 +103,7 @@ ng serve
 | 22/03/2025   | Add backend         | Spring Boot, sinhvien, nganh, abstract factory      |
 | 23/03/2025   | Fix backend, Design UI, Add login UI| Spring Boot backend, Angular frontend |
 | 24/03/2025   | Add more UI         | Read UI For sinhvien, nganh                         |
+| 25/03/2025   | Add Add and Delete UI | Add UI for nganh, Delete UI for sinhvien          |
 
 
 ##### Future Work
