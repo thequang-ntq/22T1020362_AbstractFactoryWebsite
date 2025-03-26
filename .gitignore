@@ -8,6 +8,15 @@
 #/springboot_backend
 #
 
+### VS Code
+springboot_backend/.vscode
+springboot_backend/.vscode/*
+springboot_backend/!.vscode/settings.json
+springboot_backend/!.vscode/tasks.json
+springboot_backend/!.vscode/launch.json
+springboot_backend/!.vscode/extensions.json
+springboot_backend/.history/*
+
 springboot_backend/HELP.md
 springboot_backend/target/
 springboot_backend/!.mvn/wrapper/maven-wrapper.jar

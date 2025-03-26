@@ -30,6 +30,7 @@
 
 * Read and delete objects for Student entity
 * Read and create objects for Major entity
+* Online Web Server that can use immediately, and open-source code
 
 ## USER INTERFACE
 
@@ -47,13 +48,13 @@
 | --------------------------------------                      |
 | ![Add Major UI](angular_frontend/screenshots/themndtui.png) |
 
-# HOW TO RUN THIS APP 
+# HOW TO CONFIGURE SOURCE CODE Of THIS WEBSITE 
 
 ## I. Prerequisites
 
 - **SYSTEM:** 2GB RAM, At Least 12GB of Free Space in C Drive, And 1GB of Free Space in your App Folder.
 - **INSTALLED:** [Java], [Git](https://git-scm.com/downloads)(v2.48.1), [SpringToolSuite], [MySQL], [MongoDB], [VSCode](https://code.visualstudio.com/), [Angular] - version 19
-- **You must have Wifi / Internet Access to run this app**
+- **You must have Wifi / Internet Access to run this source code**
 
 ## II. Setup
 ### 1. Clone this github repository app
@@ -78,15 +79,21 @@ git clone https://github.com/thequang-ntq/22T1020362_AbstractFactoryWebsite.git
 #### This is the App UI
 #### Using the app
 
-## III. Run App
+## III. Run Source Code Website App
 
 - This app can run on Web(recommended Chrome latest version).
 - This app can run on local.
-- **To run this app, just open your project terminal in your code editor and type:**
+- **To run this source code, just open your project terminal in your code editor and type:**
 ```bash
 ng serve
 ```
 - On http://localhost/4200
+
+- **OR YOU CAN RUN ON A BY CLICKING A WEBSITE LINK ON SERVER**
+```bash
+https://22t1020362-abstractfactorywebsite.netlify.app/
+
+```
 
 ## Error
 <details>
@@ -104,6 +111,7 @@ ng serve
 | 23/03/2025   | Fix backend, Design UI, Add login UI| Spring Boot backend, Angular frontend |
 | 24/03/2025   | Add more UI         | Read UI For sinhvien, nganh                         |
 | 25/03/2025   | Add Add and Delete UI | Add UI for nganh, Delete UI for sinhvien          |
+| 26/03/2025   | Config to Run on Server | Spring Backend: Render, Angular Frontend: Netlify . Cloud for DB: MySQL - filess (server), MongoDB: MongoDB Atlas (server, use compass to connect), Text: gist.github (server) |
 
 
 ##### Future Work

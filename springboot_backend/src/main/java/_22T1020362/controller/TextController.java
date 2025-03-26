@@ -3,6 +3,7 @@ package _22T1020362.controller;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+//import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/text")
-@CrossOrigin(origins = "http://localhost:4200") //angular port
+@CrossOrigin(origins = "https://22t1020362-abstractfactorywebsite.netlify.app") //angular port
 public class TextController {
     private final TextService textService;
 

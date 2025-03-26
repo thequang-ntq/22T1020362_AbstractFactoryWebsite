@@ -14,7 +14,7 @@ import lombok.*;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/mongodb")
-@CrossOrigin(origins = "http://localhost:4200") //angular port
+@CrossOrigin(origins = "https://22t1020362-abstractfactorywebsite.netlify.app") //angular port
 public class MongoDBController {
     private final MongoDBService mongoDBService;
 

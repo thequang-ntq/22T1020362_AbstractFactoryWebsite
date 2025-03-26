@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/mysql")
-@CrossOrigin(origins = "http://localhost:4200") //angular port
+@CrossOrigin(origins = "https://22t1020362-abstractfactorywebsite.netlify.app") //angular port
 public class MySQLController {
     private final MySQLService mySQLService;
 

@@ -12,6 +12,6 @@ public class SinhVien {
 	private int maNganh;
 	
 	public String toString() {
-        return maSinhVien + "," + hoTen + "," + maNganh + "\n";
+        return maSinhVien + "," + hoTen + "," + maNganh;
     }
 }

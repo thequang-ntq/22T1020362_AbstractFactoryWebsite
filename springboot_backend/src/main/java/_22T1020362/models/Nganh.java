@@ -12,6 +12,6 @@ public class Nganh {
 	private String tenNganh;
 	
 	public String toString() {
-		return maNganh + "," + tenNganh + "\n";
+		return maNganh + "," + tenNganh;
 	}
 }
