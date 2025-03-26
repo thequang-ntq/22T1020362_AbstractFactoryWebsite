@@ -1,0 +1,90 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+### metadata ###
+.metadata
+
+#
+#springboot_backend/
+#/springboot_backend
+#
+
+springboot_backend/HELP.md
+springboot_backend/target/
+springboot_backend/!.mvn/wrapper/maven-wrapper.jar
+springboot_backend/!**/src/main/**/target/
+springboot_backend/!**/src/test/**/target/
+
+### STS ###
+springboot_backend/.apt_generated
+springboot_backend/.classpath
+springboot_backend/.factorypath
+springboot_backend/.project
+springboot_backend/.settings
+springboot_backend/.springBeans
+springboot_backend/.sts4-cache
+
+### IntelliJ IDEA ###
+springboot_backend/.idea
+springboot_backend/*.iws
+springboot_backend/*.iml
+springboot_backend/*.ipr
+
+### NetBeans ###
+/springboot_backend/nbproject/private/
+/springboot_backend/nbbuild/
+/springboot_backend/dist/
+/springboot_backend/nbdist/
+/springboot_backend/.nb-gradle/
+springboot_backend/build/
+springboot_backend/!**/src/main/**/build/
+springboot_backend/!**/src/test/**/build/
+
+### VS Code ###
+springboot_backend/.vscode/
+
+#
+#angular_frontend/
+#/angular_frontend
+#
+
+# Compiled output
+/angular_frontend/dist
+/angular_frontend/tmp
+/angular_frontend/out-tsc
+/angular_frontend/bazel-out
+
+# Node
+/angular_frontend/node_modules
+angular_frontend/npm-debug.log
+angular_frontend/yarn-error.log
+
+# IDEs and editors
+angular_frontend/.idea/
+angular_frontend/.project
+angular_frontend/.classpath
+angular_frontend/.c9/
+angular_frontend/*.launch
+angular_frontend/.settings/
+angular_frontend/*.sublime-workspace
+
+# Visual Studio Code
+angular_frontend/.vscode
+angular_frontend/.vscode/*
+angular_frontend/!.vscode/settings.json
+angular_frontend/!.vscode/tasks.json
+angular_frontend/!.vscode/launch.json
+angular_frontend/!.vscode/extensions.json
+angular_frontend/.history/*
+
+# Miscellaneous
+/angular_frontend/.angular/cache
+angular_frontend/.sass-cache/
+/angular_frontend/connect.lock
+/angular_frontend/coverage
+/angular_frontend/libpeerconnection.log
+angular_frontend/testem.log
+/angular_frontend/typings
+
+# System files
+angular_frontend/.DS_Store
+angular_frontend/Thumbs.db
